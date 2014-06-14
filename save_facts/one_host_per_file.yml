@@ -1,0 +1,6 @@
+#this will dump facts for each host into a separate file
+
+- hosts: all
+  tasks:
+  - name: dump facts to file
+    local_action: copy content='{{ hostvars[inventory_hostname] | to_nice_json}}' dest="/tmp/{{ inventory_hostname }}.json"

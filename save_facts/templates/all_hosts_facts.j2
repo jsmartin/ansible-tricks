@@ -1,0 +1,11 @@
+{
+
+"hv": {
+
+{% for i_hostname in groups['all']: %}
+{% if i_hostname != "127.0.0.1" %}
+"{{ i_hostname }}":    {{ hostvars[i_hostname] | to_nice_json }} {% if not loop.last %},{% endif %}
+{% endif %}
+{% endfor %}
+}
+}

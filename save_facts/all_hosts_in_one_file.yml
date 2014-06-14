@@ -1,0 +1,9 @@
+#this will dump all your inventory host vars into one giant json
+
+- hosts: all
+  gather_facts: yes
+- hosts: localhost
+  connection: local
+  tasks:
+  - name: dump facts to file
+    template: src=templates/all_hosts_facts.j2 dest=/tmp/all_hosts_facts.json
