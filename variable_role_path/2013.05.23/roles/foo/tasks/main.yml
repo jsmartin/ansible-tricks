@@ -1,0 +1,4 @@
+---
+# tasks file for foo
+
+- debug: msg="This role is from 2013.05.23"

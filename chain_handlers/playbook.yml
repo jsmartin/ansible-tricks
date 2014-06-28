@@ -1,0 +1,14 @@
+- hosts: localhost
+  connection: local
+  tasks:
+  - name: sample
+    command: echo hello world
+    notify: handler 1
+
+  handlers:
+  - name: handler 1
+    command: echo hello moon
+    notify: handler 2     
+
+  - name: handler 2
+    command: echo hello stars
