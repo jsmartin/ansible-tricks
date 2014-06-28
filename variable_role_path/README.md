@@ -1,3 +1,6 @@
+The magic is in playbook.yml, check it out.
+
+
 Using 2013.05.23 as the timestamp
 
 	ansible-playbook -i hosts -v playbook.yml -e timestamp=2013.05.23
